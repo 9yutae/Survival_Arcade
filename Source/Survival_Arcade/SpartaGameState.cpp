@@ -153,7 +153,7 @@ void ASpartaGameState::StartWave()
 				{
 					SpawnVolume->SpawnBushItem();
 				}
-			}
+			} 
 		}
 	}
 

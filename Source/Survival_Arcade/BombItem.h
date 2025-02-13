@@ -12,6 +12,10 @@ class SURVIVAL_ARCADE_API ABombItem : public ABaseItem
 public:
 	ABombItem();
 
+protected:
+	virtual void BeginPlay() override;
+
+public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Bomb")
 	float ExplosionRadius;
 

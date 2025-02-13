@@ -25,6 +25,19 @@ ABombItem::ABombItem()
     BombMesh->SetNotifyRigidBodyCollision(true); // 충돌 알림 활성화
 }
 
+void ABombItem::BeginPlay()
+{
+    Super::BeginPlay();
+
+    GetWorldTimerManager().SetTimer(
+        FuzeTimerHandle,
+        this,
+        &ABombItem::Explode,
+        1.5f,
+        false
+    );
+}
+
 void ABombItem::OnHit(
 	UPrimitiveComponent* HitComp, 
 	AActor* OtherActor, 
