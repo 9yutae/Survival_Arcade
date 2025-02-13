@@ -15,7 +15,7 @@ struct FInputActionValue;
 #endif
 #define SURVIVAL_ARCADE_SpartaCharacter_generated_h
 
-#define FID_Users_9yuta_Documents_UE5_practice_02_CPP_Survival_Arcade_Source_Survival_Arcade_SpartaCharacter_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Users_9yuta_Documents_UE5_project_Survival_Arcade_Source_Survival_Arcade_SpartaCharacter_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execPause); \
 	DECLARE_FUNCTION(execStopSprint); \
 	DECLARE_FUNCTION(execStartSprint); \
@@ -24,11 +24,13 @@ struct FInputActionValue;
 	DECLARE_FUNCTION(execStartJump); \
 	DECLARE_FUNCTION(execApplyCharacterRotation); \
 	DECLARE_FUNCTION(execMove); \
+	DECLARE_FUNCTION(execRestoreSpeed); \
+	DECLARE_FUNCTION(execSlowDown); \
 	DECLARE_FUNCTION(execAddHealth); \
 	DECLARE_FUNCTION(execGetHealth);
 
 
-#define FID_Users_9yuta_Documents_UE5_practice_02_CPP_Survival_Arcade_Source_Survival_Arcade_SpartaCharacter_h_15_INCLASS_NO_PURE_DECLS \
+#define FID_Users_9yuta_Documents_UE5_project_Survival_Arcade_Source_Survival_Arcade_SpartaCharacter_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesASpartaCharacter(); \
 	friend struct Z_Construct_UClass_ASpartaCharacter_Statics; \
@@ -37,7 +39,7 @@ public: \
 	DECLARE_SERIALIZER(ASpartaCharacter)
 
 
-#define FID_Users_9yuta_Documents_UE5_practice_02_CPP_Survival_Arcade_Source_Survival_Arcade_SpartaCharacter_h_15_ENHANCED_CONSTRUCTORS \
+#define FID_Users_9yuta_Documents_UE5_project_Survival_Arcade_Source_Survival_Arcade_SpartaCharacter_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	ASpartaCharacter(ASpartaCharacter&&); \
@@ -49,13 +51,13 @@ public: \
 	NO_API virtual ~ASpartaCharacter();
 
 
-#define FID_Users_9yuta_Documents_UE5_practice_02_CPP_Survival_Arcade_Source_Survival_Arcade_SpartaCharacter_h_12_PROLOG
-#define FID_Users_9yuta_Documents_UE5_practice_02_CPP_Survival_Arcade_Source_Survival_Arcade_SpartaCharacter_h_15_GENERATED_BODY \
+#define FID_Users_9yuta_Documents_UE5_project_Survival_Arcade_Source_Survival_Arcade_SpartaCharacter_h_12_PROLOG
+#define FID_Users_9yuta_Documents_UE5_project_Survival_Arcade_Source_Survival_Arcade_SpartaCharacter_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_9yuta_Documents_UE5_practice_02_CPP_Survival_Arcade_Source_Survival_Arcade_SpartaCharacter_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_9yuta_Documents_UE5_practice_02_CPP_Survival_Arcade_Source_Survival_Arcade_SpartaCharacter_h_15_INCLASS_NO_PURE_DECLS \
-	FID_Users_9yuta_Documents_UE5_practice_02_CPP_Survival_Arcade_Source_Survival_Arcade_SpartaCharacter_h_15_ENHANCED_CONSTRUCTORS \
+	FID_Users_9yuta_Documents_UE5_project_Survival_Arcade_Source_Survival_Arcade_SpartaCharacter_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Users_9yuta_Documents_UE5_project_Survival_Arcade_Source_Survival_Arcade_SpartaCharacter_h_15_INCLASS_NO_PURE_DECLS \
+	FID_Users_9yuta_Documents_UE5_project_Survival_Arcade_Source_Survival_Arcade_SpartaCharacter_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -63,7 +65,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> SURVIVAL_ARCADE_API UClass* StaticClass<class ASpartaCharacter>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Users_9yuta_Documents_UE5_practice_02_CPP_Survival_Arcade_Source_Survival_Arcade_SpartaCharacter_h
+#define CURRENT_FILE_ID FID_Users_9yuta_Documents_UE5_project_Survival_Arcade_Source_Survival_Arcade_SpartaCharacter_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

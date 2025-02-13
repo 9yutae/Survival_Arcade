@@ -57,6 +57,12 @@ public:
 	// Menu Widget Instance
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Menu")
 	UUserWidget* GameOverMenuWidgetInstance;
+	// Menu Widget Class
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Menu")
+	TSubclassOf<UUserWidget> RedZoneHUDWidgetClass;
+	// Menu Widget Instance
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Menu")
+	UUserWidget* RedZoneHUDWidgetInstance;
 
 	UFUNCTION(BlueprintPure, Category = "HUD")
 	UUserWidget* GetHUDWidget() const;
@@ -71,6 +77,10 @@ public:
 	void ShowPauseMenu();	// Pause Menu 불러오기
 	UFUNCTION(BlueprintCallable, Category = "Menu")
 	void ShowGameOverMenu();	// GameOver Menu 불러오기
+	UFUNCTION(BlueprintCallable, Category = "Menu")
+	void ShowRedzoneAlert();
+	UFUNCTION(BlueprintCallable, Category = "Menu")
+	void HideRedzoneAlert();
 	UFUNCTION(BlueprintCallable, Category = "Menu")
 	void StartGame();		// Game Start (재시작 포함)
 	UFUNCTION(BlueprintCallable, Category = "Menu")

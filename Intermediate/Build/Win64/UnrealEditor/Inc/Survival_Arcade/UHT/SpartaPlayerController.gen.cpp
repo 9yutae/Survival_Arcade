@@ -137,6 +137,36 @@ DEFINE_FUNCTION(ASpartaPlayerController::execGetHUDWidget)
 }
 // End Class ASpartaPlayerController Function GetHUDWidget
 
+// Begin Class ASpartaPlayerController Function HideRedzoneAlert
+struct Z_Construct_UFunction_ASpartaPlayerController_HideRedzoneAlert_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Menu" },
+		{ "ModuleRelativePath", "SpartaPlayerController.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ASpartaPlayerController_HideRedzoneAlert_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ASpartaPlayerController, nullptr, "HideRedzoneAlert", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ASpartaPlayerController_HideRedzoneAlert_Statics::Function_MetaDataParams), Z_Construct_UFunction_ASpartaPlayerController_HideRedzoneAlert_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_ASpartaPlayerController_HideRedzoneAlert()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ASpartaPlayerController_HideRedzoneAlert_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ASpartaPlayerController::execHideRedzoneAlert)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->HideRedzoneAlert();
+	P_NATIVE_END;
+}
+// End Class ASpartaPlayerController Function HideRedzoneAlert
+
 // Begin Class ASpartaPlayerController Function ShowGameHUD
 struct Z_Construct_UFunction_ASpartaPlayerController_ShowGameHUD_Statics
 {
@@ -269,8 +299,8 @@ DEFINE_FUNCTION(ASpartaPlayerController::execShowPauseMenu)
 }
 // End Class ASpartaPlayerController Function ShowPauseMenu
 
-// Begin Class ASpartaPlayerController Function StartGame
-struct Z_Construct_UFunction_ASpartaPlayerController_StartGame_Statics
+// Begin Class ASpartaPlayerController Function ShowRedzoneAlert
+struct Z_Construct_UFunction_ASpartaPlayerController_ShowRedzoneAlert_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
@@ -282,6 +312,36 @@ struct Z_Construct_UFunction_ASpartaPlayerController_StartGame_Statics
 #if !UE_BUILD_SHIPPING
 		{ "ToolTip", "GameOver Menu \xef\xbf\xbd\xd2\xb7\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd" },
 #endif
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ASpartaPlayerController_ShowRedzoneAlert_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ASpartaPlayerController, nullptr, "ShowRedzoneAlert", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ASpartaPlayerController_ShowRedzoneAlert_Statics::Function_MetaDataParams), Z_Construct_UFunction_ASpartaPlayerController_ShowRedzoneAlert_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_ASpartaPlayerController_ShowRedzoneAlert()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ASpartaPlayerController_ShowRedzoneAlert_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ASpartaPlayerController::execShowRedzoneAlert)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->ShowRedzoneAlert();
+	P_NATIVE_END;
+}
+// End Class ASpartaPlayerController Function ShowRedzoneAlert
+
+// Begin Class ASpartaPlayerController Function StartGame
+struct Z_Construct_UFunction_ASpartaPlayerController_StartGame_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Menu" },
+		{ "ModuleRelativePath", "SpartaPlayerController.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFunctionParams FuncParams;
@@ -349,10 +409,12 @@ void ASpartaPlayerController::StaticRegisterNativesASpartaPlayerController()
 		{ "ContinueGame", &ASpartaPlayerController::execContinueGame },
 		{ "EndGame", &ASpartaPlayerController::execEndGame },
 		{ "GetHUDWidget", &ASpartaPlayerController::execGetHUDWidget },
+		{ "HideRedzoneAlert", &ASpartaPlayerController::execHideRedzoneAlert },
 		{ "ShowGameHUD", &ASpartaPlayerController::execShowGameHUD },
 		{ "ShowGameOverMenu", &ASpartaPlayerController::execShowGameOverMenu },
 		{ "ShowMainMenu", &ASpartaPlayerController::execShowMainMenu },
 		{ "ShowPauseMenu", &ASpartaPlayerController::execShowPauseMenu },
+		{ "ShowRedzoneAlert", &ASpartaPlayerController::execShowRedzoneAlert },
 		{ "StartGame", &ASpartaPlayerController::execStartGame },
 		{ "TogglePauseMenu", &ASpartaPlayerController::execTogglePauseMenu },
 	};
@@ -479,6 +541,27 @@ struct Z_Construct_UClass_ASpartaPlayerController_Statics
 		{ "ToolTip", "Menu Widget Instance" },
 #endif
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_RedZoneHUDWidgetClass_MetaData[] = {
+		{ "Category", "Menu" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// Menu Widget Class\n" },
+#endif
+		{ "ModuleRelativePath", "SpartaPlayerController.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Menu Widget Class" },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_RedZoneHUDWidgetInstance_MetaData[] = {
+		{ "Category", "Menu" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// Menu Widget Instance\n" },
+#endif
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "SpartaPlayerController.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Menu Widget Instance" },
+#endif
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_InputMappingContext;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_MoveAction;
@@ -494,17 +577,21 @@ struct Z_Construct_UClass_ASpartaPlayerController_Statics
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_PauseMenuWidgetInstance;
 	static const UECodeGen_Private::FClassPropertyParams NewProp_GameOverMenuWidgetClass;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_GameOverMenuWidgetInstance;
+	static const UECodeGen_Private::FClassPropertyParams NewProp_RedZoneHUDWidgetClass;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_RedZoneHUDWidgetInstance;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_ASpartaPlayerController_ContinueGame, "ContinueGame" }, // 1328192645
 		{ &Z_Construct_UFunction_ASpartaPlayerController_EndGame, "EndGame" }, // 3601911615
 		{ &Z_Construct_UFunction_ASpartaPlayerController_GetHUDWidget, "GetHUDWidget" }, // 52811969
+		{ &Z_Construct_UFunction_ASpartaPlayerController_HideRedzoneAlert, "HideRedzoneAlert" }, // 2379357950
 		{ &Z_Construct_UFunction_ASpartaPlayerController_ShowGameHUD, "ShowGameHUD" }, // 2147934502
 		{ &Z_Construct_UFunction_ASpartaPlayerController_ShowGameOverMenu, "ShowGameOverMenu" }, // 264446120
 		{ &Z_Construct_UFunction_ASpartaPlayerController_ShowMainMenu, "ShowMainMenu" }, // 4031158898
 		{ &Z_Construct_UFunction_ASpartaPlayerController_ShowPauseMenu, "ShowPauseMenu" }, // 1061436699
-		{ &Z_Construct_UFunction_ASpartaPlayerController_StartGame, "StartGame" }, // 1093844690
+		{ &Z_Construct_UFunction_ASpartaPlayerController_ShowRedzoneAlert, "ShowRedzoneAlert" }, // 411464560
+		{ &Z_Construct_UFunction_ASpartaPlayerController_StartGame, "StartGame" }, // 878452225
 		{ &Z_Construct_UFunction_ASpartaPlayerController_TogglePauseMenu, "TogglePauseMenu" }, // 4135625705
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
@@ -527,6 +614,8 @@ const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_ASpartaPlayerCo
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASpartaPlayerController_Statics::NewProp_PauseMenuWidgetInstance = { "PauseMenuWidgetInstance", nullptr, (EPropertyFlags)0x00100000000a000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASpartaPlayerController, PauseMenuWidgetInstance), Z_Construct_UClass_UUserWidget_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PauseMenuWidgetInstance_MetaData), NewProp_PauseMenuWidgetInstance_MetaData) };
 const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_ASpartaPlayerController_Statics::NewProp_GameOverMenuWidgetClass = { "GameOverMenuWidgetClass", nullptr, (EPropertyFlags)0x0014000000000005, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASpartaPlayerController, GameOverMenuWidgetClass), Z_Construct_UClass_UClass, Z_Construct_UClass_UUserWidget_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_GameOverMenuWidgetClass_MetaData), NewProp_GameOverMenuWidgetClass_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASpartaPlayerController_Statics::NewProp_GameOverMenuWidgetInstance = { "GameOverMenuWidgetInstance", nullptr, (EPropertyFlags)0x00100000000a000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASpartaPlayerController, GameOverMenuWidgetInstance), Z_Construct_UClass_UUserWidget_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_GameOverMenuWidgetInstance_MetaData), NewProp_GameOverMenuWidgetInstance_MetaData) };
+const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_ASpartaPlayerController_Statics::NewProp_RedZoneHUDWidgetClass = { "RedZoneHUDWidgetClass", nullptr, (EPropertyFlags)0x0014000000000005, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASpartaPlayerController, RedZoneHUDWidgetClass), Z_Construct_UClass_UClass, Z_Construct_UClass_UUserWidget_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_RedZoneHUDWidgetClass_MetaData), NewProp_RedZoneHUDWidgetClass_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASpartaPlayerController_Statics::NewProp_RedZoneHUDWidgetInstance = { "RedZoneHUDWidgetInstance", nullptr, (EPropertyFlags)0x00100000000a000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASpartaPlayerController, RedZoneHUDWidgetInstance), Z_Construct_UClass_UUserWidget_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_RedZoneHUDWidgetInstance_MetaData), NewProp_RedZoneHUDWidgetInstance_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ASpartaPlayerController_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASpartaPlayerController_Statics::NewProp_InputMappingContext,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASpartaPlayerController_Statics::NewProp_MoveAction,
@@ -542,6 +631,8 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ASpartaPl
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASpartaPlayerController_Statics::NewProp_PauseMenuWidgetInstance,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASpartaPlayerController_Statics::NewProp_GameOverMenuWidgetClass,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASpartaPlayerController_Statics::NewProp_GameOverMenuWidgetInstance,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASpartaPlayerController_Statics::NewProp_RedZoneHUDWidgetClass,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASpartaPlayerController_Statics::NewProp_RedZoneHUDWidgetInstance,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ASpartaPlayerController_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_ASpartaPlayerController_Statics::DependentSingletons[])() = {
@@ -581,14 +672,14 @@ ASpartaPlayerController::~ASpartaPlayerController() {}
 // End Class ASpartaPlayerController
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_9yuta_Documents_UE5_practice_02_CPP_Survival_Arcade_Source_Survival_Arcade_SpartaPlayerController_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_9yuta_Documents_UE5_project_Survival_Arcade_Source_Survival_Arcade_SpartaPlayerController_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ASpartaPlayerController, ASpartaPlayerController::StaticClass, TEXT("ASpartaPlayerController"), &Z_Registration_Info_UClass_ASpartaPlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASpartaPlayerController), 4263429021U) },
+		{ Z_Construct_UClass_ASpartaPlayerController, ASpartaPlayerController::StaticClass, TEXT("ASpartaPlayerController"), &Z_Registration_Info_UClass_ASpartaPlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASpartaPlayerController), 1324538529U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_9yuta_Documents_UE5_practice_02_CPP_Survival_Arcade_Source_Survival_Arcade_SpartaPlayerController_h_3331880146(TEXT("/Script/Survival_Arcade"),
-	Z_CompiledInDeferFile_FID_Users_9yuta_Documents_UE5_practice_02_CPP_Survival_Arcade_Source_Survival_Arcade_SpartaPlayerController_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_9yuta_Documents_UE5_practice_02_CPP_Survival_Arcade_Source_Survival_Arcade_SpartaPlayerController_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_9yuta_Documents_UE5_project_Survival_Arcade_Source_Survival_Arcade_SpartaPlayerController_h_3632741450(TEXT("/Script/Survival_Arcade"),
+	Z_CompiledInDeferFile_FID_Users_9yuta_Documents_UE5_project_Survival_Arcade_Source_Survival_Arcade_SpartaPlayerController_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_9yuta_Documents_UE5_project_Survival_Arcade_Source_Survival_Arcade_SpartaPlayerController_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

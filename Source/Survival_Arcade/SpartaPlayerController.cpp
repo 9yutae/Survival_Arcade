@@ -20,7 +20,9 @@ ASpartaPlayerController::ASpartaPlayerController()
     PauseMenuWidgetClass(nullptr),
     PauseMenuWidgetInstance(nullptr),
     GameOverMenuWidgetClass(nullptr),
-    GameOverMenuWidgetInstance(nullptr)
+    GameOverMenuWidgetInstance(nullptr),
+    RedZoneHUDWidgetClass(nullptr),
+    RedZoneHUDWidgetInstance(nullptr)
 {
 }
 
@@ -180,6 +182,36 @@ void ASpartaPlayerController::ShowGameOverMenu()
                 ));
             }
         }
+    }
+}
+
+void ASpartaPlayerController::ShowRedzoneAlert()
+{
+    if (RedZoneHUDWidgetClass)
+    {
+        RedZoneHUDWidgetInstance = CreateWidget<UUserWidget>(this, RedZoneHUDWidgetClass);
+        if (RedZoneHUDWidgetInstance)
+        {
+            RedZoneHUDWidgetInstance->AddToViewport();
+
+            FTimerHandle TimerHandle;
+            GetWorldTimerManager().SetTimer(
+                TimerHandle,
+                this,
+                &ASpartaPlayerController::HideRedzoneAlert,
+                2.0f,
+                false
+            );
+        }
+    }
+}
+
+void ASpartaPlayerController::HideRedzoneAlert()
+{
+    if (RedZoneHUDWidgetInstance)
+    {
+        RedZoneHUDWidgetInstance->RemoveFromParent();
+        RedZoneHUDWidgetInstance = nullptr;
     }
 }
 

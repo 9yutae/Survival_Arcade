@@ -1,8 +1,8 @@
 {
 	"SourceFiles": [
-		"C:\\Users\\9yuta\\Documents\\UE5\\practice\\02_CPP\\Survival_Arcade\\Source\\Survival_Arcade\\Survival_Arcade.Build.cs",
-		"C:\\Users\\9yuta\\Documents\\UE5\\practice\\02_CPP\\Survival_Arcade\\Source\\Survival_Arcade.Target.cs",
-		"C:\\Users\\9yuta\\Documents\\UE5\\practice\\02_CPP\\Survival_Arcade\\Source\\Survival_ArcadeEditor.Target.cs"
+		"C:\\Users\\9yuta\\Documents\\UE5\\project\\Survival_Arcade\\Source\\Survival_Arcade\\Survival_Arcade.Build.cs",
+		"C:\\Users\\9yuta\\Documents\\UE5\\project\\Survival_Arcade\\Source\\Survival_Arcade.Target.cs",
+		"C:\\Users\\9yuta\\Documents\\UE5\\project\\Survival_Arcade\\Source\\Survival_ArcadeEditor.Target.cs"
 	],
 	"EngineVersion": "5.5.2"
 }

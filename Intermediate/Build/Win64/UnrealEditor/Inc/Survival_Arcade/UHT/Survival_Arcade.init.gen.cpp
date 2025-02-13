@@ -17,13 +17,13 @@ void EmptyLinkFunctionForGeneratedCodeSurvival_Arcade_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0xC2E88703,
-				0xF4FC0141,
+				0xFA30F8BD,
+				0x7BCB4D0B,
 				METADATA_PARAMS(0, nullptr)
 			};
 			UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_Survival_Arcade.OuterSingleton, PackageParams);
 		}
 		return Z_Registration_Info_UPackage__Script_Survival_Arcade.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_Survival_Arcade(Z_Construct_UPackage__Script_Survival_Arcade, TEXT("/Script/Survival_Arcade"), Z_Registration_Info_UPackage__Script_Survival_Arcade, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xC2E88703, 0xF4FC0141));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_Survival_Arcade(Z_Construct_UPackage__Script_Survival_Arcade, TEXT("/Script/Survival_Arcade"), Z_Registration_Info_UPackage__Script_Survival_Arcade, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xFA30F8BD, 0x7BCB4D0B));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

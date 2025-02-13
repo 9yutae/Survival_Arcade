@@ -38,16 +38,18 @@ ASpartaCharacter::ASpartaCharacter()
 	OverheadWidget->SetWidgetSpace(EWidgetSpace::Screen); // Widget 모드 Screen으로 설정
 
 	// 속도 변수 Initialize
-	NormalSpeed = 600.0f;
+	MaxWalkingSpeed = 600.0f;
+	CurrentWalkingSpeed = MaxWalkingSpeed;
 	SprintSpeedMultiplier = 1.5f;
-	SprintSpeed = NormalSpeed * SprintSpeedMultiplier;
+	SprintSpeed = MaxWalkingSpeed * SprintSpeedMultiplier;
 
 	// 현재 캐릭터 걷는 속도 설정
-	GetCharacterMovement()->MaxWalkSpeed = NormalSpeed;
+	GetCharacterMovement()->MaxWalkSpeed = CurrentWalkingSpeed;
 
 	// 체력 변수 초기화
 	MaxHealth = 100.0f;
 	Health = MaxHealth;
+
 }
 
 float ASpartaCharacter::GetHealth() const
@@ -59,6 +61,26 @@ void ASpartaCharacter::AddHealth(float Amount)
 {
 	Health = FMath::Clamp(Health + Amount, 0.0f, MaxHealth);
 	UpdateOverheadHP();
+}
+
+void ASpartaCharacter::SlowDown(float DecelerationRate)
+{
+	CurrentWalkingSpeed = MaxWalkingSpeed * DecelerationRate;
+	SprintSpeed *= DecelerationRate;
+
+	UE_LOG(LogTemp, Warning, TEXT("New Walking Speed: %f"), CurrentWalkingSpeed);
+
+	GetCharacterMovement()->MaxWalkSpeed = CurrentWalkingSpeed;
+}
+
+void ASpartaCharacter::RestoreSpeed()
+{
+	CurrentWalkingSpeed = MaxWalkingSpeed;
+	SprintSpeed = MaxWalkingSpeed * SprintSpeedMultiplier;
+
+	UE_LOG(LogTemp, Warning, TEXT("Restore Walking Speed: %f"), CurrentWalkingSpeed);
+
+	GetCharacterMovement()->MaxWalkSpeed = CurrentWalkingSpeed;
 }
 
 void ASpartaCharacter::BeginPlay()
@@ -273,7 +295,7 @@ void ASpartaCharacter::StopSprint(const FInputActionValue& value)
 {
 	if (GetCharacterMovement())
 	{
-		GetCharacterMovement()->MaxWalkSpeed = NormalSpeed;
+		GetCharacterMovement()->MaxWalkSpeed = CurrentWalkingSpeed;
 	}
 }
 

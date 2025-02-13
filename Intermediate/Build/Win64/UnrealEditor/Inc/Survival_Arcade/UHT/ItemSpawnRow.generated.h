@@ -14,7 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define SURVIVAL_ARCADE_ItemSpawnRow_generated_h
 
-#define FID_Users_9yuta_Documents_UE5_practice_02_CPP_Survival_Arcade_Source_Survival_Arcade_ItemSpawnRow_h_11_GENERATED_BODY \
+#define FID_Users_9yuta_Documents_UE5_project_Survival_Arcade_Source_Survival_Arcade_ItemSpawnRow_h_11_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FItemSpawnRow_Statics; \
 	SURVIVAL_ARCADE_API static class UScriptStruct* StaticStruct(); \
 	typedef FTableRowBase Super;
@@ -23,7 +23,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 template<> SURVIVAL_ARCADE_API UScriptStruct* StaticStruct<struct FItemSpawnRow>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Users_9yuta_Documents_UE5_practice_02_CPP_Survival_Arcade_Source_Survival_Arcade_ItemSpawnRow_h
+#define CURRENT_FILE_ID FID_Users_9yuta_Documents_UE5_project_Survival_Arcade_Source_Survival_Arcade_ItemSpawnRow_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -11,7 +11,10 @@
     <None Include="..\..\Source\Survival_ArcadeEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.gitattributes" />
+    <None Include="..\..\.gitignore" />
     <None Include="..\..\.vsconfig" />
+    <None Include="..\..\README.md" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -42,6 +45,18 @@
     <ClCompile Include="..\..\Source\Survival_Arcade\BigCoinItem.h">
       <Filter>Source\Survival_Arcade</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Survival_Arcade\BombItem.cpp">
+      <Filter>Source\Survival_Arcade</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Survival_Arcade\BombItem.h">
+      <Filter>Source\Survival_Arcade</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Survival_Arcade\BushItem.cpp">
+      <Filter>Source\Survival_Arcade</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Survival_Arcade\BushItem.h">
+      <Filter>Source\Survival_Arcade</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Survival_Arcade\CoinItem.cpp">
       <Filter>Source\Survival_Arcade</Filter>
     </ClCompile>
@@ -70,6 +85,24 @@
       <Filter>Source\Survival_Arcade</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\Survival_Arcade\MineItem.h">
+      <Filter>Source\Survival_Arcade</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Survival_Arcade\RandomItem.cpp">
+      <Filter>Source\Survival_Arcade</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Survival_Arcade\RandomItem.h">
+      <Filter>Source\Survival_Arcade</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Survival_Arcade\RedZoneSpawner.cpp">
+      <Filter>Source\Survival_Arcade</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Survival_Arcade\RedZoneSpawner.h">
+      <Filter>Source\Survival_Arcade</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Survival_Arcade\ReverseControllItem.cpp">
+      <Filter>Source\Survival_Arcade</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Survival_Arcade\ReverseControllItem.h">
       <Filter>Source\Survival_Arcade</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\Survival_Arcade\SmallCoinItem.cpp">

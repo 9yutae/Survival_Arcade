@@ -6,6 +6,7 @@
 #include "SpawnVolume.generated.h"
 
 class UBoxComponent;
+class ABushItem;
 
 UCLASS()
 class SURVIVAL_ARCADE_API ASpawnVolume : public AActor
@@ -27,18 +28,16 @@ public:
 	// 아이템 스폰
 	UFUNCTION(BlueprintCallable, Category = "Spawning")
 	AActor* SpawnRandomItem();
-
-	// 최대 스폰 가능한 아이템 개수
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Spawning")
-	int32 MaxItemCount;
+	UFUNCTION(BlueprintCallable, Category = "Spawning")
+	AActor* SpawnBushItem();
 
 	// 무작위 위치에 소환하기 위한 FVector
-	FVector GetRandomPointInVolum() const;
+	FVector GetRandomPointInVolume() const;
 	// 지정된 클래스의 아이템을 스폰하는 함수
 	AActor* SpawnItem(TSubclassOf<AActor> ItemClass); // TSubclassOf : Actor의 하위 클래스까지 포함하여 지정 (Actor가 아니면 오류)
 	// 랜덤 확률로 아이템 선택
 	FItemSpawnRow* GetRandomItem() const;
-	// 스폰된 아이템 개수
-	int32 ItemCount;
+	UPROPERTY(EditAnywhere, Category = "Spawning")
+	TSubclassOf<ABushItem> ABushItemClass; // 올바른 클래스 타입 지정
 
 };

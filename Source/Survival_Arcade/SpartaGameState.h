@@ -4,6 +4,8 @@
 #include "GameFramework/GameState.h"
 #include "SpartaGameState.generated.h"
 
+class ARedZoneSpawner;
+
 UCLASS()
 class SURVIVAL_ARCADE_API ASpartaGameState : public AGameState
 {
@@ -34,6 +36,9 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Level")
 	TArray<FName> LevelMapNames;
+
+	UPROPERTY(EditDefaultsOnly, Category = "RedZone")
+	TSubclassOf<ARedZoneSpawner> RedZoneSpawnerClass;
 
 	FTimerHandle WaveTimerHandle;  // 웨이브 타이머
 	FTimerHandle HUDUpdateTimerHandle; // HUD Widget Update 타이머

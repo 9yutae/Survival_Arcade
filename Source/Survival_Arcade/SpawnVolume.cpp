@@ -1,5 +1,6 @@
 #include "SpawnVolume.h"
 #include "Components/BoxComponent.h"
+#include "BushItem.h"
 
 ASpawnVolume::ASpawnVolume()
 {
@@ -10,10 +11,6 @@ ASpawnVolume::ASpawnVolume()
 
 	SpawningBox = CreateDefaultSubobject<UBoxComponent>(TEXT("SpawningBox"));
 	SpawningBox->SetupAttachment(Scene);
-
-	// 아이템 개수 초기화
-	MaxItemCount = 20;
-	ItemCount = 0;
 
 }
 
@@ -33,7 +30,34 @@ AActor* ASpawnVolume::SpawnRandomItem()
 	return nullptr;
 }
 
-FVector ASpawnVolume::GetRandomPointInVolum() const
+AActor* ASpawnVolume::SpawnBushItem()
+{
+	if (!ABushItemClass) return nullptr;
+
+	FVector BoxExtent = SpawningBox->GetScaledBoxExtent();
+
+	// 중심 좌표 구하기
+	FVector BoxOrigin = SpawningBox->GetComponentLocation();
+
+	FVector SpawnLocation = BoxOrigin + FVector(
+		FMath::FRandRange(-BoxExtent.X, BoxExtent.X),
+		FMath::FRandRange(-BoxExtent.Y, BoxExtent.Y),
+		-45.0f);
+	FRotator SpawnRotation = FRotator(
+		0.0f,
+		FMath::FRandRange(-90.0f, 90.0f),
+		0.0f);
+
+	AActor* SpawnedActor = GetWorld()->SpawnActor<AActor>( // AActor의 하위 클래스 포함
+		ABushItemClass,
+		SpawnLocation, // 랜덤 위치
+		SpawnRotation
+	);
+
+	return SpawnedActor;
+}
+
+FVector ASpawnVolume::GetRandomPointInVolume() const
 {
 	/* 랜덤 위치 범위 구하기(Box 크기)
 	* GetScaledBoxExtent() : Box 컴포넌트 크기를 가져오는 함수
@@ -59,8 +83,8 @@ AActor* ASpawnVolume::SpawnItem(TSubclassOf<AActor> ItemClass)
 
 	AActor* SpawnedActor = GetWorld()->SpawnActor<AActor>( // AActor의 하위 클래스 포함
 		ItemClass,
-		GetRandomPointInVolum(), // 랜덤 위치
-		FRotator::ZeroRotator // 회전은 (0, 0, 0)으로
+		GetRandomPointInVolume(), // 랜덤 위치
+		FRotator(0.0f, FMath::FRandRange(-90.0f, 90.0f), 0.0f) // 회전은 (0, 0, 0)으로
 	);
 
 	return SpawnedActor;

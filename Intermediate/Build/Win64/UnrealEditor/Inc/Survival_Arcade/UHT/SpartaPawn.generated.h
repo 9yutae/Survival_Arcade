@@ -14,7 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define SURVIVAL_ARCADE_SpartaPawn_generated_h
 
-#define FID_Users_9yuta_Documents_UE5_practice_02_CPP_Survival_Arcade_Source_Survival_Arcade_SpartaPawn_h_13_INCLASS_NO_PURE_DECLS \
+#define FID_Users_9yuta_Documents_UE5_project_Survival_Arcade_Source_Survival_Arcade_SpartaPawn_h_13_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesASpartaPawn(); \
 	friend struct Z_Construct_UClass_ASpartaPawn_Statics; \
@@ -23,7 +23,7 @@ public: \
 	DECLARE_SERIALIZER(ASpartaPawn)
 
 
-#define FID_Users_9yuta_Documents_UE5_practice_02_CPP_Survival_Arcade_Source_Survival_Arcade_SpartaPawn_h_13_ENHANCED_CONSTRUCTORS \
+#define FID_Users_9yuta_Documents_UE5_project_Survival_Arcade_Source_Survival_Arcade_SpartaPawn_h_13_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	ASpartaPawn(ASpartaPawn&&); \
@@ -35,12 +35,12 @@ public: \
 	NO_API virtual ~ASpartaPawn();
 
 
-#define FID_Users_9yuta_Documents_UE5_practice_02_CPP_Survival_Arcade_Source_Survival_Arcade_SpartaPawn_h_10_PROLOG
-#define FID_Users_9yuta_Documents_UE5_practice_02_CPP_Survival_Arcade_Source_Survival_Arcade_SpartaPawn_h_13_GENERATED_BODY \
+#define FID_Users_9yuta_Documents_UE5_project_Survival_Arcade_Source_Survival_Arcade_SpartaPawn_h_10_PROLOG
+#define FID_Users_9yuta_Documents_UE5_project_Survival_Arcade_Source_Survival_Arcade_SpartaPawn_h_13_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_9yuta_Documents_UE5_practice_02_CPP_Survival_Arcade_Source_Survival_Arcade_SpartaPawn_h_13_INCLASS_NO_PURE_DECLS \
-	FID_Users_9yuta_Documents_UE5_practice_02_CPP_Survival_Arcade_Source_Survival_Arcade_SpartaPawn_h_13_ENHANCED_CONSTRUCTORS \
+	FID_Users_9yuta_Documents_UE5_project_Survival_Arcade_Source_Survival_Arcade_SpartaPawn_h_13_INCLASS_NO_PURE_DECLS \
+	FID_Users_9yuta_Documents_UE5_project_Survival_Arcade_Source_Survival_Arcade_SpartaPawn_h_13_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -48,7 +48,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> SURVIVAL_ARCADE_API UClass* StaticClass<class ASpartaPawn>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Users_9yuta_Documents_UE5_practice_02_CPP_Survival_Arcade_Source_Survival_Arcade_SpartaPawn_h
+#define CURRENT_FILE_ID FID_Users_9yuta_Documents_UE5_project_Survival_Arcade_Source_Survival_Arcade_SpartaPawn_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

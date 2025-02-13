@@ -9,12 +9,24 @@ AMineItem::AMineItem()
 	ExplosionRadius = 300.0f;
 	ExplosionDamage = 30.0f;
 	ItemType = "Mine";
+	bFallsFromSky = false;
 	bHasExploded = false;
 
 	ExplosionCollision = CreateDefaultSubobject<USphereComponent>(TEXT("ExplosionCollision"));
 	ExplosionCollision->InitSphereRadius(ExplosionRadius);
 	ExplosionCollision->SetCollisionProfileName(TEXT("OverlapAllDynamic"));
 	ExplosionCollision->SetupAttachment(Scene);
+}
+
+void AMineItem::BeginPlay()
+{
+	Super::BeginPlay();
+
+	if (bFallsFromSky)
+	{
+		StaticMesh->SetSimulatePhysics(true);  // 물리 적용 (중력 영향 받음)
+		StaticMesh->SetEnableGravity(true);
+	}
 }
 
 void AMineItem::ActivateItem(AActor* Activator)

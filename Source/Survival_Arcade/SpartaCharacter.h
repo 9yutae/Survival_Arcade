@@ -31,6 +31,11 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Health")
 	void AddHealth(float Amount);
 
+	UFUNCTION(BlueprintCallable, Category = "Debuff")
+	void SlowDown(float DecelerationRate);
+	UFUNCTION(BlueprintCallable, Category = "Debuff")
+	void RestoreSpeed();
+
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Health")
 	float MaxHealth;
@@ -76,7 +81,8 @@ protected:
 
 private:
 	// 기본 이동 속도와 달리기 속도 변수 선언
-	float NormalSpeed;
+	float MaxWalkingSpeed;
+	float CurrentWalkingSpeed;
 	float SprintSpeedMultiplier;
 	float SprintSpeed;
 

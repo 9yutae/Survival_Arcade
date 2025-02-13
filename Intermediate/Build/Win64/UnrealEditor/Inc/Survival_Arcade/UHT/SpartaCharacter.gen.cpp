@@ -301,6 +301,79 @@ DEFINE_FUNCTION(ASpartaCharacter::execPause)
 }
 // End Class ASpartaCharacter Function Pause
 
+// Begin Class ASpartaCharacter Function RestoreSpeed
+struct Z_Construct_UFunction_ASpartaCharacter_RestoreSpeed_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Debuff" },
+		{ "ModuleRelativePath", "SpartaCharacter.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ASpartaCharacter_RestoreSpeed_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ASpartaCharacter, nullptr, "RestoreSpeed", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ASpartaCharacter_RestoreSpeed_Statics::Function_MetaDataParams), Z_Construct_UFunction_ASpartaCharacter_RestoreSpeed_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_ASpartaCharacter_RestoreSpeed()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ASpartaCharacter_RestoreSpeed_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ASpartaCharacter::execRestoreSpeed)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->RestoreSpeed();
+	P_NATIVE_END;
+}
+// End Class ASpartaCharacter Function RestoreSpeed
+
+// Begin Class ASpartaCharacter Function SlowDown
+struct Z_Construct_UFunction_ASpartaCharacter_SlowDown_Statics
+{
+	struct SpartaCharacter_eventSlowDown_Parms
+	{
+		float DecelerationRate;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Debuff" },
+		{ "ModuleRelativePath", "SpartaCharacter.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_DecelerationRate;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_ASpartaCharacter_SlowDown_Statics::NewProp_DecelerationRate = { "DecelerationRate", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(SpartaCharacter_eventSlowDown_Parms, DecelerationRate), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ASpartaCharacter_SlowDown_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ASpartaCharacter_SlowDown_Statics::NewProp_DecelerationRate,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ASpartaCharacter_SlowDown_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ASpartaCharacter_SlowDown_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ASpartaCharacter, nullptr, "SlowDown", nullptr, nullptr, Z_Construct_UFunction_ASpartaCharacter_SlowDown_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ASpartaCharacter_SlowDown_Statics::PropPointers), sizeof(Z_Construct_UFunction_ASpartaCharacter_SlowDown_Statics::SpartaCharacter_eventSlowDown_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ASpartaCharacter_SlowDown_Statics::Function_MetaDataParams), Z_Construct_UFunction_ASpartaCharacter_SlowDown_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_ASpartaCharacter_SlowDown_Statics::SpartaCharacter_eventSlowDown_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_ASpartaCharacter_SlowDown()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ASpartaCharacter_SlowDown_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ASpartaCharacter::execSlowDown)
+{
+	P_GET_PROPERTY(FFloatProperty,Z_Param_DecelerationRate);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->SlowDown(Z_Param_DecelerationRate);
+	P_NATIVE_END;
+}
+// End Class ASpartaCharacter Function SlowDown
+
 // Begin Class ASpartaCharacter Function StartJump
 struct Z_Construct_UFunction_ASpartaCharacter_StartJump_Statics
 {
@@ -498,6 +571,8 @@ void ASpartaCharacter::StaticRegisterNativesASpartaCharacter()
 		{ "Look", &ASpartaCharacter::execLook },
 		{ "Move", &ASpartaCharacter::execMove },
 		{ "Pause", &ASpartaCharacter::execPause },
+		{ "RestoreSpeed", &ASpartaCharacter::execRestoreSpeed },
+		{ "SlowDown", &ASpartaCharacter::execSlowDown },
 		{ "StartJump", &ASpartaCharacter::execStartJump },
 		{ "StartSprint", &ASpartaCharacter::execStartSprint },
 		{ "StopJump", &ASpartaCharacter::execStopJump },
@@ -556,6 +631,8 @@ struct Z_Construct_UClass_ASpartaCharacter_Statics
 		{ &Z_Construct_UFunction_ASpartaCharacter_Look, "Look" }, // 1336146698
 		{ &Z_Construct_UFunction_ASpartaCharacter_Move, "Move" }, // 3211912415
 		{ &Z_Construct_UFunction_ASpartaCharacter_Pause, "Pause" }, // 3078367970
+		{ &Z_Construct_UFunction_ASpartaCharacter_RestoreSpeed, "RestoreSpeed" }, // 3847298323
+		{ &Z_Construct_UFunction_ASpartaCharacter_SlowDown, "SlowDown" }, // 521587515
 		{ &Z_Construct_UFunction_ASpartaCharacter_StartJump, "StartJump" }, // 2233361826
 		{ &Z_Construct_UFunction_ASpartaCharacter_StartSprint, "StartSprint" }, // 4022029887
 		{ &Z_Construct_UFunction_ASpartaCharacter_StopJump, "StopJump" }, // 2702697836
@@ -617,14 +694,14 @@ ASpartaCharacter::~ASpartaCharacter() {}
 // End Class ASpartaCharacter
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_9yuta_Documents_UE5_practice_02_CPP_Survival_Arcade_Source_Survival_Arcade_SpartaCharacter_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_9yuta_Documents_UE5_project_Survival_Arcade_Source_Survival_Arcade_SpartaCharacter_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ASpartaCharacter, ASpartaCharacter::StaticClass, TEXT("ASpartaCharacter"), &Z_Registration_Info_UClass_ASpartaCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASpartaCharacter), 549829614U) },
+		{ Z_Construct_UClass_ASpartaCharacter, ASpartaCharacter::StaticClass, TEXT("ASpartaCharacter"), &Z_Registration_Info_UClass_ASpartaCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASpartaCharacter), 2503951270U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_9yuta_Documents_UE5_practice_02_CPP_Survival_Arcade_Source_Survival_Arcade_SpartaCharacter_h_2290777696(TEXT("/Script/Survival_Arcade"),
-	Z_CompiledInDeferFile_FID_Users_9yuta_Documents_UE5_practice_02_CPP_Survival_Arcade_Source_Survival_Arcade_SpartaCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_9yuta_Documents_UE5_practice_02_CPP_Survival_Arcade_Source_Survival_Arcade_SpartaCharacter_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_9yuta_Documents_UE5_project_Survival_Arcade_Source_Survival_Arcade_SpartaCharacter_h_3096442058(TEXT("/Script/Survival_Arcade"),
+	Z_CompiledInDeferFile_FID_Users_9yuta_Documents_UE5_project_Survival_Arcade_Source_Survival_Arcade_SpartaCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_9yuta_Documents_UE5_project_Survival_Arcade_Source_Survival_Arcade_SpartaCharacter_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

@@ -12,6 +12,10 @@ class SURVIVAL_ARCADE_API AMineItem : public ABaseItem
 public:
 	AMineItem();
 
+protected:
+	virtual void BeginPlay() override;
+
+public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Item|Component")
 	USphereComponent* ExplosionCollision;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item|Effects")
@@ -24,6 +28,8 @@ public:
 	float ExplosionRadius;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item")
 	int32 ExplosionDamage;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item")
+	bool bFallsFromSky;
 
 	bool bHasExploded;
 	FTimerHandle ExplosionTimerHandle;

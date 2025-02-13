@@ -5,6 +5,7 @@
 #include "SpawnVolume.h"
 #include "BaseItem.h"
 #include "CoinItem.h"
+#include "RedZoneSpawner.h"
 #include "Components/TextBlock.h"
 #include "Blueprint/UserWidget.h"
 
@@ -140,6 +141,27 @@ void ASpartaGameState::StartWave()
 				}
 			}
 		}
+	}
+
+	// 상위 Wave 아이템 추가
+	if (CurrentWaveIndex > 0) {
+		for (int32 i = 0; i < ItemToSpawn * CurrentWaveIndex * 1.5f; i++)
+		{
+			if (FoundVolumes.Num() > 0)
+			{
+				if (ASpawnVolume* SpawnVolume = Cast<ASpawnVolume>(FoundVolumes[0]))
+				{
+					SpawnVolume->SpawnBushItem();
+				}
+			}
+		}
+	}
+
+	if (CurrentWaveIndex > 1) {
+		FVector SpawnLocation = FVector(0.0f, 0.0f, 0.0f); // RedZoneSpawner를 (0,0,0)에 배치
+		FRotator SpawnRotation = FRotator::ZeroRotator;
+
+		ARedZoneSpawner* RedZoneSpawner = GetWorld()->SpawnActor<ARedZoneSpawner>(RedZoneSpawnerClass, SpawnLocation, SpawnRotation);
 	}
 
 	UE_LOG(LogTemp, Warning, TEXT("Wave %d Started!"), CurrentWaveIndex + 1);
